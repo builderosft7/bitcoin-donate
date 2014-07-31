@@ -48,11 +48,54 @@ So here's how you do it:
 
 What you end up with is a standard link with an on-mouseover popup containing a
 QR code.  Just point your phone, and tap "send" in whatever app you're using.
+Want the popup effect on an image?  It's just like any other `<a>` tag:
+
+```html
+  <a href="bitcoin:A_BITCOIN_ADDRESS"><img src="/path/to/image.png" /></a>
+```
 
 
-## Working Demo
+## Override the Default CSS
 
-This code has been wrestled into a [jsfiddle](http://jsfiddle.net/T5uSN/2/) to see how it works, but the implementation there (due to a lack of CDN for these files) is not ideal.  The best way to use this is laid out above.
+To work, bitcoin-donate requires that you load `btcdonate.css`, but there's
+nothing stopping you from adding CSS overrides after that.  If for example you
+want the background colour of the bubble to be dark grey, you can do this:
+
+```html
+<link rel="stylesheet" href="/path/to/css/btcdonate.css">
+<style type="text/css">
+  .btcdonate-bubble {
+    background: #cccccc;
+  }
+</style>
+```
+
+Tweak the css as you see fit.  The defaults are just a suggestion.
+
+
+## Customise the QR code
+
+Bitcoin-donate makes use of [jQuery-QRCode](https://github.com/lrsjng/jQuery.qrcode)
+and makes some of the customising features in that library available to you.
+Presently, you can fiddle with the `fill` and `radius` values to change the
+colour and shape of the codes generated:
+
+```javascript
+// Change the fill to deep red and make the QR code corners sharp
+btcdonate({
+  fill: #990000,
+  radius: 0
+});
+```
+
+
+## Working Demo & Sample Code
+
+There's a working demo available [here](http://static.danielquinn.org/bitcoin-donate/demo/), 
+or you can just grab this repo and open `index.html` in the `demo` directory.
+
+There's some examples in the source of the demo if you want to see what kinds
+of options you have as a developer using this code.
 
 
 ## 3rd-party libraries
