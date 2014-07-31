@@ -83,7 +83,7 @@ colour and shape of the codes generated:
 ```javascript
 // Change the fill to deep red and make the QR code corners sharp
 btcdonate({
-  fill: #990000,
+  fill: "#990000",
   radius: 0
 });
 ```
