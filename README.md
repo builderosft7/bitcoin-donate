@@ -91,8 +91,10 @@ btcdonate({
 
 ## Working Demo & Sample Code
 
-There's a working demo available [here](http://static.danielquinn.org/bitcoin-donate/demo/), 
-or you can just grab this repo and open `index.html` in the `demo` directory.
+There's a working demo available [here](http://static.danielquinn.org/bitcoin-donate/demo/),
+as well as a [jsfiddle](http://jsfiddle.net/T5uSN/4/) if you're into that sort
+of thing, or you can just grab this repo and open `index.html` in the `demo`
+directory.
 
 There's some examples in the source of the demo if you want to see what kinds
 of options you have as a developer using this code.
@@ -112,3 +114,8 @@ interacting with [Andreas Schildbach's popular Bitcoin Wallet](https://play.goog
 app available in the Google Play store.  If you have tried this out under other
 circumstances please feel free to say as much in the issue queue and I'll update
 the status here.
+
+At the moment, there appears to be a strange bug that makes the bubble appear
+lower than it should, but only when you load the page for the first time, and
+only in some instances.  If you can point out why this is happening, I'd
+appreciate it.
