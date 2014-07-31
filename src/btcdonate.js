@@ -1,6 +1,6 @@
 /*
  *
- * Original source from: http://jqueryfordesigners.com/coda-popup-bubbles.1.html
+ * Original popup magic from: http://jqueryfordesigners.com/coda-popup-bubbles.1.html
  *
  */
 var btcdonate = function(options){
@@ -14,7 +14,7 @@ var btcdonate = function(options){
     radius: options.radius || 0.3
   };
 
-  // Wrap all links with href="bitcoin:..." so that we can operate on them
+  // Wrap all links containing href="bitcoin:..." so that we can operate on them
   $("a[href^=bitcoin]")
     .addClass("btcdonate-trigger")
     .wrap('<span class="btcdonate"></span>');
@@ -35,14 +35,14 @@ var btcdonate = function(options){
     var trigger = $('.btcdonate-trigger', this).get(0);
     var address = $(trigger).attr("href");
 
-    var $qr = $('<div class="btcdonate-address"></div>')
+    var $qr = $('<div class="btcdonate-qr"></div>')
       .qrcode({
         size: 128,
         fill: qr.fill,
         radius: qr.radius,
         text: address,
         render: "image"
-      }).html();
+      });
 
     var $bubble = $('<div class="btcdonate-bubble"></div>')
       .css("opacity", 0)
