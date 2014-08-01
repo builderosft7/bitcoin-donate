@@ -61,7 +61,12 @@ web page rather than attempting to handle a `bitcoin:` link, you can just use
 `data-btcaddress=MYADDRESS` instead:
 
 ```html
-<a href="https://blockchain.info/address/A_BITCOIN_ADDRESS" data-btcaddress="A_BITCOIN_ADDRESS">Some text</a>
+<a
+  href="https://blockchain.info/address/A_BITCOIN_ADDRESS"
+  data-btcaddress="A_BITCOIN_ADDRESS"
+>
+  Some text
+</a>
 ```
 
 
