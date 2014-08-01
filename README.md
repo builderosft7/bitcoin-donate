@@ -51,7 +51,17 @@ QR code.  Just point your phone, and tap "send" in whatever app you're using.
 Want the popup effect on an image?  It's just like any other `<a>` tag:
 
 ```html
-  <a href="bitcoin:A_BITCOIN_ADDRESS"><img src="/path/to/image.png" /></a>
+<a href="bitcoin:A_BITCOIN_ADDRESS"><img src="/path/to/image.png" /></a>
+```
+
+## Use the `href` to point to a regular URL
+
+If you want the `onClick` event to trigger the typical behaviour of visiting a
+web page rather than attempting to handle a `bitcoin:` link, you can just use
+`data-btcaddress=MYADDRESS` instead:
+
+```html
+<a href="https://blockchain.info/address/A_BITCOIN_ADDRESS" data-btcaddress="A_BITCOIN_ADDRESS">Some text</a>
 ```
 
 
@@ -119,3 +129,11 @@ At the moment, there appears to be a strange bug that makes the bubble appear
 lower than it should, but only when you load the page for the first time, and
 only in some instances.  If you can point out why this is happening, I'd
 appreciate it.
+
+
+## Donate
+
+Ironically, GitHub won't let you run javascript, so I can't actually *use* this
+module here to solicit donations.  However all of the generated QR codes in the
+demo and this README point to my address, and you can always go old-school and
+copy/paste: 1BPVHqxcMAdPEtfSHLLPfpqucrDfgCGgD4

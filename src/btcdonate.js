@@ -15,7 +15,7 @@ var btcdonate = function(options){
   };
 
   // Wrap all links containing href="bitcoin:..." so that we can operate on them
-  $("a[href^=bitcoin]")
+  $("a[href^=bitcoin],a[data-btcaddress]")
     .addClass("btcdonate-trigger")
     .wrap('<span class="btcdonate"></span>');
 
@@ -33,14 +33,17 @@ var btcdonate = function(options){
     var shown      = false;
 
     var trigger = $('.btcdonate-trigger', this).get(0);
-    var address = $(trigger).attr("href");
+    var address = $(trigger).attr("data-btcaddress") || $(trigger).attr("href");
+    if (address.indexOf("bitcoin:")) {
+      address = "bitcoin:" + address;
+    }
 
     var $qr = $('<div class="btcdonate-qr"></div>')
       .qrcode({
         size: 128,
         fill: qr.fill,
         radius: qr.radius,
-        text: address,
+        text: address.replace("bitcoin:", ""),
         render: "image"
       });
 
