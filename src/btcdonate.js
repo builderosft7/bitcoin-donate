@@ -54,11 +54,11 @@ var btcdonate = function(options){
 
     $(this).append($bubble);
 
-    var bubble_offset_vertical = ($bubble.height() + 25) * -1;
-    var bubble_offset_horizontal = (($bubble.width() - $(trigger).width()) / 2) * -1;
-
     // Set the mouseover and mouseout on both elements
     $([trigger, $bubble.get(0)]).mouseover(function () {
+
+      var bubble_offset_vertical = ($bubble.height() + 25) * -1;
+      var bubble_offset_horizontal = (($bubble.width() - $(trigger).width()) / 2) * -1;
 
       // Stops the hide event if we move from the trigger to the popup element
       if (hideDelayTimer) {
