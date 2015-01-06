@@ -41,6 +41,9 @@ So here's how you do it:
     <script type="text/javascript" src="/path/to/js/jquery.js"></script>
     <script type="text/javascript" src="/path/to/js/jquery.qrcode.js"></script>
     <script type="text/javascript" src="/path/to/js/btcdonate.js"></script>
+    <script>
+      btcdonate();
+    </script>
 
   </body>
 </html>
